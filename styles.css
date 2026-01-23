@@ -160,7 +160,7 @@ main {
 }
 
 .frame--hero h1 {
-  font-size: clamp(42px, 9vw, 96px);
+  font-size: clamp(33.6px, 7.2vw, 76.8px);
   letter-spacing: 0.02em;
   margin: 0;
   font-weight: 500;
@@ -429,13 +429,22 @@ main {
   padding: clamp(40px, 8vh, 100px) clamp(40px, 8vw, 120px);
   max-width: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
 }
 
 .archive-grid {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(4, minmax(100px, 140px));
   gap: clamp(12px, 2vw, 24px);
-  width: 100%;
+  row-gap: clamp(12px, 2vw, 24px);
+  column-gap: clamp(12px, 2vw, 24px);
+  width: fit-content;
+  max-width: min(800px, 100%);
+  margin: 0 auto;
+  grid-auto-rows: auto;
 }
 
 .archive-item {
@@ -445,6 +454,7 @@ main {
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
   position: relative;
+  max-width: 140px;
 }
 
 .archive-item:hover {
