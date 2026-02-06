@@ -62,6 +62,7 @@ main {
 }
 
 .frame-inner {
+  position: relative;
   min-height: 100vh;
   padding: clamp(20px, 5vw, 60px);
   display: flex;
@@ -204,20 +205,28 @@ main {
   color: var(--ink);
 }
 
-.frame--work .frame-content {
-  position: static;
-  transform: none;
-  flex: 1;
+/* Same content layout as homepage: one centered block between top and bottom bars */
+.frame--work .frame-content,
+.frame--archive-grid .frame-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  padding: clamp(40px, 8vh, 120px) clamp(20px, 5vw, 60px);
-  margin: 0;
   max-width: 100%;
+  margin: 0;
+  padding: 0 clamp(20px, 5vw, 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .work-cards-content {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .work-cards-grid {
@@ -422,17 +431,12 @@ main {
   color: #ffffff;
 }
 
-/* Archive Grid Styles */
+/* Archive Grid Styles - same centered content layout as homepage */
 .archive-grid-content {
-  position: static;
-  transform: none;
-  padding: clamp(40px, 8vh, 100px) clamp(40px, 8vw, 120px);
-  max-width: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 200px);
+  width: 100%;
 }
 
 .archive-grid {
